@@ -25,9 +25,9 @@ public class Demo {
         //接下来利用流写出就可以了....
     }
 
-//    /**
-//     * 下面是个http请求下载excel的例子，此项目不是web服务
-//     */
+    /**
+     * 下面是个http请求下载excel的例子，此项目不是web服务
+     */
 //    @ApiOperation("导出excel")
 //    @RequestMapping(value = "/list/excel/export", method = RequestMethod.GET)
 //    public void BankcardListExport(HttpServletResponse response) throws IOException {
