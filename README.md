@@ -1,12 +1,12 @@
-# fastexcel
-基于注解生成excel
-使用步骤：
-1> UserBO字段添加注解，详情见代码示例
-2> 创建 List<UserBO> userBOList 对象；
-3> XSSFWorkbook workbook = FastExcel.createXSSFWorkbook(userBOList);  这样excel就生成完成了。  
+# # 基于注解生成excel
+### 使用步骤：
+
+- UserBO字段添加注解，详情见代码示例;
+- 创建 List<UserBO> userBOList 对象;
+- XSSFWorkbook workbook = FastExcel.createXSSFWorkbook(userBOList);  这样excel就生成完成了;
 
 
-
+```
 代码示例
 /**
  * 用于测试的对象
@@ -46,6 +46,8 @@ public static void main(String[] args){
     userBOList.add(userBO);
     //将list<T>传入就可以创建excel
     XSSFWorkbook workbook = FastExcel.createXSSFWorkbook(userBOList);
-    //接下来利用流输出就可以了....
+    //接下来利用流输出就可以了..
 }
+
+```
 
