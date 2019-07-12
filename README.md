@@ -49,25 +49,3 @@ public static void main(String[] args){
     //接下来利用流输出就可以了....
 }
 
-web端下载excel:
-@ApiOperation("导出excel")
-@RequestMapping(value = "/list/excel/export", method = RequestMethod.GET)
-public void BankcardListExport(HttpServletResponse response) throws IOException {
-    //创建需要生成的测试数据
-    List<UserBO> userBOList = new ArrayList<UserBO>();
-    UserBO userBO =new UserBO();
-    userBO.setName("彭于晏");
-    userBO.setMobile("1570749****");
-    userBO.setGmtCreate(new Date());
-    userBO.setBirthDay(new Date());
-    userBOList.add(userBO);
-        
-    //开始创建Excel
-    XSSFWorkbook workbook = FastExcel.createXSSFWorkbook(userBOList);
-    String fileName =  "导出测试用户";
-    response.setContentType("application/x-download");
-    response.setHeader("Content-Disposition", "attachment; filename=" + java.net.URLEncoder.encode(fileName, "UTF-8"));
-    BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(response.getOutputStream());
-    //关闭流
-    CommonUtil.shutDownStream(workbook,bufferedOutputStream);
-}
